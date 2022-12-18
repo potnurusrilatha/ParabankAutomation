@@ -24,7 +24,7 @@ public class BaseClass {
  
 	@BeforeClass
 	public void BeforeClass() {
-		//1.open chrome
+		//open chrome
 				driver=new ChromeDriver();
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 				driver.manage().window().maximize();
@@ -33,7 +33,7 @@ public class BaseClass {
 	}
 	@AfterClass
 	public void AfterClass() {
-		 //driver.quit();
+		 driver.quit();
 			//Reporter.log("Browser quit",true);
 		
 		

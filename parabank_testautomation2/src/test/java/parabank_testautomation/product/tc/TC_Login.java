@@ -18,7 +18,7 @@ public class TC_Login extends BaseClass {
 @Test
 public void t_01_validate_url_is_working(){
 
-			//2.Navigate to URL
+			//Navigate to URL
 			driver.get(url);
 			String actual=driver.getTitle();
 			String expected="ParaBank | Welcome | Online Banking";
@@ -34,14 +34,17 @@ public void t_02_validate_parabank_login() {
 
 			    
 				
-				//3.intialize the Page Object
+				//intialize the Page Object
 				PO_Login obj=PageFactory.initElements(driver, PO_Login.class);
+				//Enter UserName
 				obj.EnterUserName("john");
+				//Enter Password
 				obj.EnterPassword("demo");
+				// Click Submit Button
 				obj.ClicksubmitButton();
 				
 				
-				//6.Validation-Title
+				//Validation-Title
 				String expected="ParaBank | Accounts Overview";
 				String actual=driver.getTitle();
 				Assert.assertEquals(actual, expected);
@@ -60,12 +63,16 @@ public void t_02_validate_parabank_login() {
 
 @Test	
 public void t_03_Transfer_funds() {
-				
+	
+				//Enter fromAccount
 				String fromAccount="13344";
+				//Enter toAccount
 				String toAccount="13344";
+				//Enter amount
 				String amount="100";
-				//TransferFunds clicked
+				//Intialize the Page Object
 				PO_Common oPO_Common=PageFactory.initElements(driver, PO_Common.class);
+				//TransferFunds clicked
 				oPO_Common.ClickOnTransferFunds();
 				
 				//TransferFunds Operation
@@ -85,15 +92,22 @@ public void t_03_Transfer_funds() {
 @Test
 public void t_04_Update_Contact_Info() {
 	
+	            //Enter the FirstName
 				String FirstName="john";
+				//Enter the LastName
 				String LastName="demo";
+				//Enter the Address
 				String Address= "1431 Main St";
+				//Enter the City
 				String City="Beverly Hills";
+				//Enter the State
 				String State="CA";
+				//Enter the Zipcode
 				String ZipCode="90210";
+				//Enter the Phone
 				String Phone="310-447-4121";
 	
-				// Apply for Update Profile
+				//Intialize the Page Object
 				PO_UpdateContactInfo oPO_CommonUCInfo=PageFactory.initElements(driver, PO_UpdateContactInfo.class);
 				oPO_CommonUCInfo.ClickOnUpdateProfileButton();
 	
@@ -119,11 +133,15 @@ public void t_04_Update_Contact_Info() {
 @Test
 public void t_05_Request_loan() {
 	
+	            //Enter the LoanAmount
 				String LoanAmount="10000";
+				 //Enter the DownAmount
 				String DownPayment="500";
+				 //Enter the FromAccount
 				String FromAccount="13344";
-				//Apply for a loan Clicked
+				//Intialize the Page Object
 				PO_RLoan oPO_CommonRLoan=PageFactory.initElements(driver, PO_RLoan.class);
+				//Apply for a loan Clicked
 				oPO_CommonRLoan.ClickOnApplyNowButton();
 	
 				//Amount Operations
