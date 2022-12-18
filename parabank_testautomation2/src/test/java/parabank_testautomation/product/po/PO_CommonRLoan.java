@@ -7,21 +7,21 @@ import org.openqa.selenium.support.How;
 
 import parabank_testautomation.utils.Common;
 
-public class PO_Common {
+public class PO_CommonRLoan {
 	// 1st Section
 			WebDriver driver;
 			
 			// 2nd Paramatrized Constructor
-			public PO_Common(WebDriver driver) {
+			public PO_CommonRLoan(WebDriver driver) {
 				this.driver=driver;
 		}
 			//3rd Section: locators
-			@FindBy(how=How.LINK_TEXT,using="Transfer Funds")
-			private WebElement link_transfer_funds;
+			@FindBy(how=How.LINK_TEXT,using="Request Loan")
+			private WebElement link_Request_Loan;
 			
-				public void ClickOnTransferFunds() {
-					link_transfer_funds.click();
-					//Common.log("Info","Transfer Funds Button Clicked");
+				public void ClickOnRequestLoan() {
+					link_Request_Loan.click();
+					Common.log("Info","Request Loan Button Clicked");
 				}
 
 }
